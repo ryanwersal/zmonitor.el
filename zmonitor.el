@@ -52,6 +52,11 @@
 		(delete-process proc))
 	(kill-buffer zmonitor-buffer-name)))
 
+(defun zmonitor-restart ()
+  (interactive)
+  (zmonitor-stop)
+  (zmonitor-start))
+
 (defun zmonitor-filter (proc string)
   (let ((buff zmonitor-buffer-name))
 	(if (get-buffer buff)
